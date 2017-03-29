@@ -65,7 +65,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.mt6572:root/fstab.mt6572 \
     $(LOCAL_PATH)/rootdir/init.modem.rc:root/init.modem.rc \
     $(LOCAL_PATH)/rootdir/init.mt6572.rc:root/init.mt6572.rc \
-    $(LOCAL_PATH)/rootdir/init.mt6572_common.rc:root/init.mt6572_common.rc \
     $(LOCAL_PATH)/rootdir/init.mt6572.usb.rc:root/init.mt6572.usb.rc \
     $(LOCAL_PATH)/rootdir/ueventd.mt6572.rc:root/ueventd.mt6572.rc \
     $(LOCAL_PATH)/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
