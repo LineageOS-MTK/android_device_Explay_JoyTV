@@ -83,3 +83,6 @@ debug.hwui.render_dirty_regions=false
 persist.sys.timezone=Europe/Moscow
 persist.sys.strictmode.visual=0
 persist.sys.strictmode.disable=1
+
+#OTA
+cm.updater.uri=https://raw.githubusercontent.com/LineageOS-MTK/OTA/master/JoyTV.json
