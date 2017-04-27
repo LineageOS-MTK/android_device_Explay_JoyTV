@@ -1,5 +1,5 @@
 #
-# system.prop for mt6572
+# system.prop for Explay Joy TV
 #
 service.adb.root=1
 ro.sf.lcd_density=210

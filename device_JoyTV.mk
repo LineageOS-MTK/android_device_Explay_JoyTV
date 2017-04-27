@@ -3,9 +3,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/mediatek/mt6572/mt6572-vendor.mk)
+$(call inherit-product-if-exists, vendor/Explay/JoyTV/JoyTV-vendor.mk)
 
-LOCAL_PATH := device/mediatek/mt6572
+LOCAL_PATH := device/Explay/JoyTV
 
 PRODUCT_CHARACTERISTICS := default
 
@@ -139,8 +139,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
 
 PRODUCT_PACKAGES += \
-    gps.mt6572 \
-    YGPS
+    gps.mt6572
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
@@ -176,8 +175,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.media.use-awesome=true
 
-PRODUCT_NAME := full_mt6572
-PRODUCT_DEVICE := mt6572
+PRODUCT_NAME := full_JoyTV
+PRODUCT_DEVICE := JoyTV
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 800
