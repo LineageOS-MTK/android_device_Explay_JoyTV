@@ -758,7 +758,7 @@ on property:wlan.driver.status=ok
 on property:wlan.driver.status=unloaded
 	write /dev/wmtWifi "0"
 
-service p2p_supplicant /system/bin/wpa_supplicant -dd \
+service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets -N \
@@ -775,7 +775,7 @@ service p2p_supplicant /system/bin/wpa_supplicant -dd \
     disabled
     oneshot
 
-service wpa_supplicant /system/bin/wpa_supplicant -dd \
+service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets \
@@ -789,7 +789,7 @@ service wpa_supplicant /system/bin/wpa_supplicant -dd \
     disabled
     oneshot
 
-service dhcpcd_bt-pan /system/bin/dhcpcd -A -BK -dd
+service dhcpcd_bt-pan /system/bin/dhcpcd -A -BK
     class main
     user dhcp
     group net_admin net_raw
