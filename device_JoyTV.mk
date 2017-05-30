@@ -67,7 +67,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.mt6572.rc:root/init.mt6572.rc \
     $(LOCAL_PATH)/rootdir/init.mt6572.usb.rc:root/init.mt6572.usb.rc \
     $(LOCAL_PATH)/rootdir/ueventd.mt6572.rc:root/ueventd.mt6572.rc \
-    $(LOCAL_PATH)/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
+    $(LOCAL_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
     $(LOCAL_KERNEL):kernel
 
 # Permissions
@@ -116,6 +116,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
     $(LOCAL_PATH)/configs/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Charger
 PRODUCT_PACKAGES += \
     charger \
@@ -123,16 +127,10 @@ PRODUCT_PACKAGES += \
     libnl_2 \
     libtinyxml
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
 # FM Radio
 PRODUCT_PACKAGES += \
     FMRadio \
-    libfmjni \
-    libfmcust \
-    libmtkplayer
+    libfmjni
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -145,31 +143,22 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml	
 
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.allow.mock.location=1 \
-    persist.service.adb.enable=1 \
-    persist.service.debuggable=1 \
-    persist.sys.usb.config=mtp
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.mediatek.version.release=ALPS.W10.24.p0 \
-    ro.mediatek.platform=mt6572 \
-    ro.mediatek.chip_ver=S01 \
-    ro.mediatek.version.branch=KK1.MP1 \
-    ro.mediatek.version.sdk=2 \
-    ro.telephony.sim.count=2 \
-    ro.allow.mock.location=1 \
-    ro.debuggable=1 \
-    persist.sys.usb.config=mtp,adb \
-    persist.service.adb.enable=1 \
-    persist.service.debuggable=1 \
-    persist.mtk.wcn.combo.chipid=-1
+PRODUCT_PROPERTY_OVERRIDES := \
+	ro.mediatek.version.release=ALPS.W10.24.p0 \
+	ro.mediatek.platform=MT6572 \
+	ro.mediatek.chip_ver=S01 \
+	ro.mediatek.version.branch=KK1.MP1 \
+	ro.mediatek.version.sdk=2 \
+	ro.telephony.sim.count=2 \
+	ro.allow.mock.location=0 \
+	ro.debuggable=1 \
+	persist.sys.usb.config=mtp,adb \
+	persist.service.adb.enable=1 \
+	persist.service.debuggable=1 \
+	persist.mtk.wcn.combo.chipid=-1
 
 # Set default player to AwesomePlayer
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -182,6 +171,7 @@ PRODUCT_DEVICE := JoyTV
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
+# AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
