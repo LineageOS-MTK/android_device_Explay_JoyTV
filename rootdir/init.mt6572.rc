@@ -8,7 +8,6 @@ on early-init
 
 on charger
     mount ext4 /emmc@android /system ro wait
-    start ipod
     start servicemanager
 
     # disable USB
@@ -75,12 +74,6 @@ service BGW /system/xbin/BGW
     group gps system radio
     class main
     oneshot
-
-# Offline charging
-service ipod /system/bin/ipod
-    user root
-    group root
-    class ipo
 
 # mount different fs end
 
