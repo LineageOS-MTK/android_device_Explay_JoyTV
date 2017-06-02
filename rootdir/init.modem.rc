@@ -104,12 +104,6 @@ service pppd_gprs /system/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepe
     disabled
     oneshot
 
-#Add by T.Zh for ppp daemon
-service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
-    user root
-    disabled 
-    oneshot
-
 #
 #
 #  Modem related services (End)
