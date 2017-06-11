@@ -15,14 +15,6 @@ TARGET_NO_BOOTLOADER := true
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a7
 TARGET_CPU_VARIANT:= cortex-a7
-TARGET_CPU_MEMCPY_OPT_DISABLE := true
-
-# Enable dex-preoptimization
-WITH_DEXPREOPT := false
-DONT_DEXPREOPT_PREBUILTS := true
-
-# Link against libxlog
-TARGET_LDPRELOAD := libxlog.so
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := JoyTV
