@@ -25,10 +25,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libxlog
 
-# Lights
-PRODUCT_PACKAGES += \
-    lights.mt6572
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.mt6572 \
