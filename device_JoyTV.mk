@@ -20,9 +20,6 @@ endif
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PACKAGES += \
-    Torch
-
-PRODUCT_PACKAGES += \
     libxlog
 
 # Audio
