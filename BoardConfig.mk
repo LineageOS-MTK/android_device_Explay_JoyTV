@@ -3,26 +3,17 @@
 
 LOCAL_PATH := device/Explay/JoyTV
 
-# Board
+# Platform
 TARGET_BOARD_PLATFORM := mt6572
+TARGET_NO_BOOTLOADER := true
+
+# Architecture
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-ARCH_ARM_HAVE_VFP := true
 TARGET_CPU_SMP := true
-TARGET_ARCH := arm
-ARCH_ARM_HAVE_NEON := true
-TARGET_NO_BOOTLOADER := true
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_ARCH_VARIANT_CPU := cortex-a7
-TARGET_CPU_VARIANT:= cortex-a7
-TARGET_CPU_MEMCPY_OPT_DISABLE := true
-
-# Enable dex-preoptimization
-WITH_DEXPREOPT := false
-DONT_DEXPREOPT_PREBUILTS := true
-
-# Link against libxlog
-TARGET_LDPRELOAD := libxlog.so
+TARGET_CPU_VARIANT := cortex-a7
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := JoyTV
@@ -71,6 +62,7 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/bootimg.mk
+BOARD_MKBOOTIMG_ARGS := --board 1336460062
 BOARD_CUSTOM_BOOTIMG := true
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun%d/file"
@@ -110,10 +102,9 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # Offline charging
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
+BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.mtk
 
 # EGL settings
 BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
